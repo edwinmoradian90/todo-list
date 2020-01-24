@@ -5,7 +5,7 @@ $light_red: rgb(255, 154, 154);
 $dark_red: rgb(255, 111, 111);
 $purple: rgba(212, 87, 212, 0.5);
 $page_height: calc(100vh - 80px);
-$color-grad-vertical: linear-gradient($light_red, $light_blue);
+$color-grad-vertical: linear-gradient(45deg ,$light_red, $light_blue);
 $color-grad-horizontal: linear-gradient(to left, $light_red, $dark_red);
 
 $border-style: 0px 10px 0px 10px;
@@ -31,14 +31,26 @@ body {
     display: flex;
 }
 
-.nav {
+.main_button {
     background: $color-grad-horizontal;
+    border-radius: $border-style;
+    color: white;
+    margin-right: 20px;
+    padding: 10px;
+    &:hover {
+        animation: pulse 1s infinite;
+        cursor: pointer;
+    }
+}
+
+.nav {
+    background: white;
     height: 80px;
     width: 100vw;
 }
 
 .nav_title {
-    color: white;
+    color: $dark_red;
     display: block;
     font-size: 2.5em;
     font-weight: 500;
@@ -62,7 +74,7 @@ body {
 }
 
 .list_title {
-    background: $light_blue;
+    background: $color_grad_vertical;
     border-radius: 0px 10px 0px 10px;
     color: white;
     font-weight: 700;
@@ -79,6 +91,7 @@ body {
     background: $color-grad-horizontal;
     border-radius: $border-style;
     color: white;
+    margin-top: 20px;
     padding: 10px;
     width: 50px;
     &:hover {
@@ -142,11 +155,13 @@ body {
 .todo_item {
     border-bottom: 1px solid $light_red;
     box-sizing: border-box;
-    margin-bottom: 20px;
     padding: 20px 0px 20px 0px;
     width: auto;
     &:hover {
+        animation: pulse 1s infinite;
+        color: white;
         cursor: pointer;
+        background: $color-grad-vertical;
     }
 }
 
@@ -165,6 +180,7 @@ body {
 
 .projects_container {
     background: $color-grad-horizontal;
+    border-radius: 10px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,7 +189,7 @@ body {
 }
 
 .projects_title{
-    background: $light_blue;
+    background: $color-grad-vertical;
     border-radius: 0px 15px 0px 15px;
     color: white;
     font-weight: 700;
@@ -181,6 +197,88 @@ body {
     width: 90%;
 }
 
+.popup_box_container {
+    background: rgba(0, 0, 0, 0.575);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.popup_box {
+    background: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    left: 0;
+    margin: 4.5% auto;
+    padding: 50px 30px 50px 30px;
+    top: 0;
+    width: 40%;
+    z-index: 1000;
+}
+
+.popup_box_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup_box_content {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+
+.popup_box_title {
+    border-radius: $border-style;
+    background: $color-grad-horizontal;
+    color: white;
+    font-size: 40px;
+    height: 50px;
+    width: 200px;
+    padding: 20px;
+}
+
+.task_info {
+    border: 1px solid $light_red;
+    border-radius: $border-style;
+    margin-bottom: 10px;
+    padding: 10px;
+    &:focus {
+        border: 2px solid $light_blue;
+    }
+}
+
+.close_popup { 
+    color: $dark_red;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+    transition: .3s;
+    &:hover { 
+        cursor: pointer;
+        color: $light_blue;
+    }
+}
+
+.show_todo_title { 
+    padding: 10px;
+}
+
+.popup_delete_button {
+    color: $dark_red;
+    padding: 10px;
+    transition: .3s;
+    &:hover {
+        color: $light_blue;
+        cursor: pointer;
+    }
+}
+
+// Animation
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);

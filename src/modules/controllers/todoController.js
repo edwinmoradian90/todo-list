@@ -1,4 +1,4 @@
-import { getStorage, setStorage } from './storage';
+import { getStorage, setStorage } from './storageController';
 
 let todos = getStorage();
 
@@ -36,7 +36,6 @@ const update = function(todo_id, newTodo) {
     selected.description = newTodo[1].value;
     selected.due_date = newTodo[2].value;
     selected.priority = newTodo[3].value;
-    console.log(todos[todo_id], selected.title, todo_id, 'selected');
 }
 
 export { create, destroy, index, show, update };

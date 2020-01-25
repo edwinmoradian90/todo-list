@@ -95,7 +95,7 @@ body {
 
 .button_wrapper {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   padding: 20px;
   width: 100%; }
 
@@ -106,6 +106,16 @@ body {
   padding: 10px;
   margin: 10px 0px; }
   .create_todo_button:hover {
+    animation: pulse 1s infinite;
+    cursor: pointer; }
+
+.create_project_button {
+  background: linear-gradient(to left, #ff9a9a, #ff6f6f);
+  border-radius: 0px 5px 0px 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px 0px; }
+  .create_project_button:hover {
     animation: pulse 1s infinite;
     cursor: pointer; }
 
@@ -153,8 +163,29 @@ body {
   border-radius: 0px 15px 0px 15px;
   color: white;
   font-weight: 700;
+  margin-bottom: 40px;
   padding: 20px;
   width: 90%; }
+
+.projects_list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 100%; }
+
+.project_item {
+  background: linear-gradient(45deg, #ff9a9a, #bdfff4);
+  border-radius: 0px 10px 0px 10px;
+  box-sizing: border-box;
+  color: white;
+  height: 50px;
+  margin-top: 40px;
+  padding: 10px;
+  width: 100%; }
+  .project_item:hover {
+    animation: pulse 1s infinite;
+    cursor: pointer; }
 
 .popup_box_container {
   background: rgba(0, 0, 0, 0.575);

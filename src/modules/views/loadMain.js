@@ -39,7 +39,7 @@ function loadMain() {
     // Input
     const addTodoInput = document.createElement('input');
     addTodoInput.setAttribute('type', 'text');
-    addTodoInput.setAttribute('placeholder', 'Add a new task...');
+    addTodoInput.setAttribute('placeholder', 'Create a new task or project...');
     addTodoInput.classList.add('add_todo_input');
 
     // Button wrapper
@@ -50,6 +50,12 @@ function loadMain() {
     const createTodoButton = document.createElement('span');
     createTodoButton.classList.add('create_todo_button');
     createTodoButton.innerText = 'Create task';
+
+    //Create new project
+    const addToProjectButton = document.createElement('span');
+    addToProjectButton.classList.add('create_project_button');
+    addToProjectButton.innerText = 'New Project';
+
 
     // Cancel task button
     const cancelTodoButton = document.createElement('span');
@@ -77,6 +83,7 @@ function loadMain() {
     projectsContainer.appendChild(projectsList);
 
     buttonWrapper.appendChild(createTodoButton);
+    buttonWrapper.appendChild(addToProjectButton);
     buttonWrapper.appendChild(cancelTodoButton);
 
     addTodoInputWrapper.appendChild(addTodoInput);

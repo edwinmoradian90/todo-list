@@ -6,15 +6,17 @@ import {
     displayIndex, 
     deleteTodo, 
     displayTodo, 
-    clearProjects, 
     closeDisplay,
+    clearProjects,
     updateTodo 
-} from './actions';
+} from './todoActions';
 import render from './render';
+import { createProject, displayProjects } from './projectActions';
 
 const initialize = function() {
     loadMain();
     displayIndex();
+    displayProjects();
     console.log('listening')
     document.addEventListener('click', (e) => {
         let click = e.target;
@@ -54,6 +56,12 @@ const initialize = function() {
             updateTodo(click.id);
             closeDisplay();
             render();
+        } else
+        if(click.matches('.create_project_button')) {
+            createProject();
+            render();
+            hideInput();
+            console.log('project created');
         }
     });
 };

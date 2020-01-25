@@ -124,12 +124,24 @@ body {
 
 .button_wrapper {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     padding: 20px;
     width: 100%;
 }
 
 .create_todo_button {
+    background: $color_grad_horizontal;
+    border-radius: 0px 5px 0px 5px;
+    color: white;
+    padding: 10px;
+    margin: 10px 0px;
+    &:hover {
+        animation: pulse 1s infinite;
+        cursor: pointer;
+    }
+}
+
+.create_project_button {
     background: $color_grad_horizontal;
     border-radius: 0px 5px 0px 5px;
     color: white;
@@ -193,8 +205,32 @@ body {
     border-radius: 0px 15px 0px 15px;
     color: white;
     font-weight: 700;
+    margin-bottom: 40px;
     padding: 20px;
     width: 90%;
+}
+
+.projects_list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 100%;
+}
+
+.project_item {
+    background:$color-grad-vertical;
+    border-radius: $border-style;
+    box-sizing: border-box;
+    color: white;
+    height: 50px;
+    margin-top: 40px;
+    padding: 10px;
+    width: 100%;
+    &:hover {
+        animation: pulse 1s infinite;
+        cursor: pointer;
+    }
 }
 
 .popup_box_container {

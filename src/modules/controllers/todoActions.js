@@ -1,6 +1,7 @@
-import { create, index, destroy, show, update } from './todo';
-import { setStorage, getStorage } from './storage';
-import popup from '../views/popup';
+import { create, index, destroy, show, update } from './todoController';
+import { setStorage, getStorage } from './storageController';
+import popup from '../views/popupView';
+import displayTasks from '../views/todosView';
 
     const showInput = function() {
         const addTodoButton = document.querySelector('.add_todo_button');
@@ -45,24 +46,8 @@ import popup from '../views/popup';
     }
 
     const displayIndex = function() {
-        let todoList = document.querySelector('.todo_list');
         const todos = index();
-        if(todos !== null) {
-            todos.forEach((todo, i) => {
-                const todo_item = `
-                    <li id=${i} class="todo_item">
-                        <h3>
-                            ${todo.title}
-                        </h3>
-                        <span id=${i} class="delete_todo_item">
-                            delete
-                        </span>
-                        <hr />
-                    </li>
-                `
-                todoList.innerHTML += todo_item;
-            });
-        };
+        displayTasks(todos);
     };
 
     const displayTodo = function(todo_id) {
@@ -84,6 +69,10 @@ import popup from '../views/popup';
             todoList.removeChild(todoList.firstChild);
         };
     };
+
+    const createProject = function() {
+
+    }
 
     const clearProjects = function() {
         let projectsList = document.querySelector('.projects_list');

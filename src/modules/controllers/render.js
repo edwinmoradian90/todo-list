@@ -1,5 +1,5 @@
 import { displayIndex, clearIndex, resetInput} from "./todoActions";
-import { displayProjects, clearProjects } from "./projectActions";
+import { displayProjects, clearProjects, selectProject } from "./projectActions";
 
 function render() {
     clearIndex();

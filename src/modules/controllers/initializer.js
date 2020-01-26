@@ -8,15 +8,16 @@ import {
     displayTodo, 
     closeDisplay,
     clearProjects,
-    updateTodo 
+    updateTodo, 
+    clearIndex
 } from './todoActions';
 import render from './render';
-import { createProject, displayProjects } from './projectActions';
+import { createProject, displayProjects, selectProject, setProjectMode, highlightSelected, deleteSelectedProject } from './projectActions';
+import { setProjectState } from './projectController';
 
 const initialize = function() {
     loadMain();
-    displayIndex();
-    displayProjects();
+    render();
     console.log('listening')
     document.addEventListener('click', (e) => {
         let click = e.target;
@@ -43,9 +44,11 @@ const initialize = function() {
             console.log('showing todo', click.id);
             clearProjects();
             displayTodo(click.id);
+            displayProjects();
         } else
         if(click.matches('.close_popup')) {
             closeDisplay();
+            render();
         } else
         if(click.matches('.popup_delete_button')) {
             deleteTodo(click.id);
@@ -62,6 +65,20 @@ const initialize = function() {
             render();
             hideInput();
             console.log('project created');
+        } else 
+        if(click.matches('.project_item_container')) {
+            clearIndex();
+            setProjectMode(click.id);
+            selectProject(click.id);
+            highlightSelected(click.id);
+            render();
+            console.log(click.id)
+        } else
+        if(click.matches('.project_card_delete')) {
+            setProjectState(false);
+            deleteSelectedProject();
+            selectProject(click.id);
+            render();
         }
     });
 };

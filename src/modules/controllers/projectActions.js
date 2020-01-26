@@ -49,7 +49,11 @@ const highlightSelected = function(project_id) {
 // Allows for created tasks to be saved in project
 const setProjectMode = function(project_id) {
     const state = getProjectState();
-    setProjectState(!state.projectOpened, project_id);
+    if(state.projectId === project_id) {
+        setProjectState(!state.projectOpened, project_id);
+    } else {
+        setProjectState(true, project_id);
+    };
 };
 
 const getProjectTasks = function() {

@@ -1,0 +1,21 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch ./src/assets/sass -o ./src/assets/css",
+    "build": "webpack --watch"
+  },
+  "author": "edwin moradian",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "node-sass": "^4.13.1"
+  }
+}

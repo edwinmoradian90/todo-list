@@ -1,10 +1,9 @@
 
 function displayProjectsIndex(projects) {
-    if(projects !== null){
-        console.log(projects)
-        projects.forEach((project, i) => {
-            const projectsList = document.querySelector('.projects_list');
-            const content = `
+  if (projects !== null) {
+    projects.forEach((project, i) => {
+      const projectsList = document.querySelector('.projects_list');
+      const content = `
                 <li id=${i} class="project_item_container">
                     <span class="project_card_title">
                         ${project.title}
@@ -14,9 +13,9 @@ function displayProjectsIndex(projects) {
                     </span>
                 </li>
             `
-            projectsList.innerHTML += content;
-        });
-    };
+      projectsList.innerHTML += content;
+    });
+  };
 };
 
 export { displayProjectsIndex };

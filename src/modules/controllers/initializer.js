@@ -3,13 +3,12 @@ import {
   showInput,
   hideInput,
   createTodo,
-  displayIndex,
   deleteTodo,
   displayTodo,
   closeDisplay,
   clearProjects,
   updateTodo,
-  clearIndex
+  clearIndex,
 } from "./todoActions";
 import render from "./render";
 import {
@@ -22,7 +21,7 @@ import {
 } from "./projectActions";
 import { setProjectState } from "./projectController";
 
-const initialize = function() {
+const initialize = function () {
   loadMain();
   render();
   document.addEventListener("click", e => {

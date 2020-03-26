@@ -9,11 +9,11 @@ const todoFactory = (title, description, due_date, priority) => {
     title,
     description,
     due_date,
-    priority
+    priority,
   };
 };
 
-const create = function(title, description) {
+const create = function (title, description) {
   const todo = todoFactory(title, description, "anytime", "low");
   const projects = projectsIndex();
   const state = getProjectState();
@@ -29,20 +29,20 @@ const create = function(title, description) {
   }
 };
 
-const destroy = function(todo_id) {
+const destroy = function (todo_id) {
   todos.splice(todo_id, 1);
 };
 
-const index = function() {
+const index = function () {
   return todos;
 };
 
-const show = function(todo_id) {
+const show = function (todo_id) {
   const selected = todos[todo_id];
   return selected;
 };
 
-const update = function(todo_id, newTodo) {
+const update = function (todo_id, newTodo) {
   const projectState = getProjectState();
   let selected = "";
   if (projectState.projectOpened) {

@@ -1,5 +1,5 @@
 function popup(todo, id) {
-    const content = `
+  const content = `
         <div class="popup_box_container">
             <div class="popup_box">
                 <div class="popup_box_header">
@@ -27,9 +27,9 @@ function popup(todo, id) {
                 </div>
             </div>
         </div>
-    `
+    `;
 
-    return content;
+  return content;
 }
 
 export default popup;
